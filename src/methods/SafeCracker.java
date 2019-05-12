@@ -14,23 +14,32 @@ import javax.swing.JOptionPane;
 public class SafeCracker {
 
 	public static void main(String[] args) {
+		
+		tryCode();
+		
 		/*
 		 * Your mission: use the tryCode method to crack the safe by trying all possible
 		 * combinations
 		 */
 		
+		
 
 	}
 
-	static void tryCode(int guess) {
+	static void tryCode() {
+		int guess = 9999999;
 		System.out.println("trying " + guess);
 
 		int secretCode = 9999999 - wekncrzpasfdkjhcfjse;
 
+		for(int i = 0; i < 100; i++) {
 		if (guess == secretCode) {
 			JOptionPane.showMessageDialog(null, "Congratulations! You cracked the safe with " + guess);
 			playTheSoundOfSuccess();
 			System.exit(0);
+		} else {
+			guess--;
+		}
 		}
 	}
 
